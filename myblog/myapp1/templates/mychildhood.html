@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{%block contents%}
+<div class="column side">
+    <h2>My childhood</h2>
+    <p>
+        사실 저는 이 페이지가 다른 사람들한테 보여질 것이라고 생각치 않아요<br>
+        왜냐? 아무도 주소를 모르니까~ㅎㅎ<br>
+        그런 의미에서 제 귀여운 시절 사진을 몇 개 올려볼게요<br>
+        나중에 사진을 엄청 모아서 사진첩을 만들면..귀찮겠죠?
+    </p>
+
+
+</div>
+<div class="column middle">
+    <h2> 제 어린 시절을 소개합니다!</h2>
+    <table border="1">
+        <!-- 테이블의 구성요소  -->
+        <!-- 표의 제일 윗칸! -->
+
+        <tr>
+            <!-- 첫번째 줄 시작 -->
+            <td>
+
+                <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.0-9/93054025_2345436619089012_4627477835785699328_n.jpg?_nc_cat=101&_nc_sid=110474&_nc_ohc=ja4R01d3_w4AX8hX_uu&_nc_ht=scontent-gmp1-1.xx&oh=25d08290bade8b0721edc0834d4b12ac&oe=5EBBB6B4"
+                    , width="300" height="300">
+
+            </td>
+            <td>
+                <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.0-9/93784815_2345436622422345_4303291260447227904_n.jpg?_nc_cat=104&_nc_sid=110474&_nc_ohc=molpwy3y4PMAX_xeTKy&_nc_ht=scontent-gmp1-1.xx&oh=da799d4043e3f3ad9f2fae866c4f2e0b&oe=5EBB2AF1"
+                    , width="400" height="300">
+            </td>
+        </tr>
+        <tr>
+            <!-- 두번째 줄 시작 -->
+            <td>
+
+                <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.0-9/92823619_2345436659089008_6195082805098053632_n.jpg?_nc_cat=109&_nc_sid=110474&_nc_ohc=1XDoXd-6Wh0AX9c3E_l&_nc_ht=scontent-gmp1-1.xx&oh=f55b057219403bd8157dab85518787c0&oe=5EB9B06F"
+                    , width="400" height="300">
+            </td>
+            <td>
+
+                <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.0-9/93579294_2345440775755263_3400679118411399168_n.jpg?_nc_cat=101&_nc_sid=110474&_nc_ohc=j6mj-Pm3HpkAX_4tpPY&_nc_ht=scontent-gmp1-1.xx&oh=bd53a0bf88d4f6072ee1c1416e19ace6&oe=5EBAF118"
+                    , width="400" height="300"><br>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+</div>
+
+<div class="column side">
+    <h2>언제가 가장 돌아가고 싶은 나이인가요?</h2>
+
+    <!-- 텍스트를 입력(input)받을 창을 만들고 -->
+    <input type="text" id="input"> <button onclick="input()">Submit</button>
+    <!-- 텍스트를 출력(output)할 창을 만들고 -->
+    <p>
+        <textarea id="output"></textarea> <button onclick="output()">Print</button>
+    </p>
+    <p>
+        <h4>submit 다음에 print를 눌러야 출력됩니다!</h4>
+    </p>
+
+    <!-- 아래부터 자바스크립트 -->
+    <!--구성된 요소를 아이디 값으로 찾아가는 함수!실제값은.value가 된다-->
+    <script type="text/javascript">
+        var temp;
+
+        function input() {
+            var input = document.getElementById("input").value;
+            temp = input;
+        }
+
+        function output() {
+            document.getElementById("output").value = temp;
+        }
+    </script>
+
+    {% endblock %}

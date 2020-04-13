@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{%block contents%}
+
+<div class="column side">
+    <h2>Report list</h2>
+    Movies<br>
+    &#187; About time<br>
+    &#187; The Truman Show <br>
+    &#187; Inception<br>
+    &#187; Kingsman<br>
+
+    <p>
+        Books<br>
+        &#187; 7년의 밤<br>
+        &#187; 종의 기원<br>
+        &#187; 밤의 양들<br>
+
+    </p>
+
+
+</div>
+<div class="column middle">
+    <h2> 페이지 소개</h2>
+    <p>여기는 제가 영화나 책을 보고 감명깊었거나 오래 기억하고 싶은 장면, 문구, 느낌들을 적어놓는 곳이에요.
+        저는 좋아하는 영화나 책은 시간이 지나서 다시 읽어보는 편인데, 그때마다 달라진 느낌들을 기록해두기 위해 만든 페이지라고 할 수 있죠!
+        지금 제가 어떤 상황에 처해있는 지, 어떤 관계 속에 얽혀있는 지에 따라서 다른 느낌을 느끼는 것 같아요.
+        그래서 글이 매우 주관적이랍니다~ 왜냐하면 여기는 Yuna's blog이기 때문이죠!
+    </p>
+    <p>
+        <h2>A book or movie that I want to see</h2>
+        <table border="1">
+            <!-- 테이블의 구성요소  -->
+            <!-- 표의 제일 윗칸! -->
+            <th>Movies</th>
+            <th>Books</th>
+            <tr>
+                <!-- 첫번째 줄 시작 -->
+                <td>&#187; Eternal Sunshine of the Spotless Mind</td>
+                <td>&#187; 완벽한 날들</td>
+            </tr>
+            <tr>
+                <!-- 두번째 줄 시작 -->
+                <td> &#187; The king's Man,2020</td>
+                <td> &#187; 마당이 있는 집 </td>
+            </tr>
+            <tr>
+                <!-- 세번째 줄 시작 -->
+                <td> &#187; 리틀 포레스트</td>
+                <td> &#187; 브랜드가 되어간다는 것 </td>
+            </tr>
+            <tr>
+                <!-- 네번째 줄 시작 -->
+                <td> &#187; 건축학개론 </td>
+                <td> &#187; 성공력</td>
+            </tr>
+            <tr>
+                <!-- 다섯번째 줄 시작 -->
+                <td> &#187; The usual Suspects</td>
+                <td> &#187; 나는 나로 살기로 했다 </td>
+            </tr>
+            <tr>
+                <!-- 여섯번째 줄 시작 -->
+                <td> &#187; 반도,2020</td>
+                <td> &#187; 변종의 늑대 </td>
+            </tr>
+        </table>
+
+</div>
+
+<div class="column side">
+    <h2>읽었던 책 중에 기억에 남는 것이 있나요? 추천해주세요!</h2>
+
+    <!-- 텍스트를 입력(input)받을 창을 만들고 -->
+    <input type="text" id="input"> <button onclick="input()">Submit</button>
+    <!-- 텍스트를 출력(output)할 창을 만들고 -->
+    <p>
+        <textarea id="output"></textarea> <button onclick="output()">Print</button>
+    </p>
+    <p>
+        <h4>submit 다음에 print를 눌러야 출력됩니다!</h4>
+    </p>
+
+    <!-- 아래부터 자바스크립트 -->
+    <!--구성된 요소를 아이디 값으로 찾아가는 함수!실제값은.value가 된다-->
+    <script type="text/javascript">
+        var temp;
+
+        function input() {
+            var input = document.getElementById("input").value;
+            temp = input;
+        }
+
+        function output() {
+            document.getElementById("output").value = temp;
+        }
+    </script>
+
+    {% endblock %}
