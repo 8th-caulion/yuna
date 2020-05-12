@@ -7,8 +7,14 @@
 <p> {{blog.body}} </p>
 
 <br><br>
+<form method="POST">
+    <input type="button" value="HOME" onClick="location.href='http://127.0.0.1:8000/'">
+    <!-- HTML input type="button"으로 버튼에 링크걸기! -->
 
-<a href="{%url 'home'%}">HOME</a>
-<a href="{%url 'edit' blog.id %}">EDIT</a>
-<a href="{%url 'delete' blog.id %}">DELETE</a>
+    <!-- <a href="{%url 'home'%}"><input type="submit" value="HOME"></a>
+    버튼 안에 링크를 걸기 위해서는 위의 코드를 이용해야한다 -->
+    <a href="{%url 'edit' blog.id %}">EDIT</a>
+    <a href="{%url 'delete' blog.id %}">DELETE</a>
+</form>
+
 {% endblock %}

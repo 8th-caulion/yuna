@@ -18,8 +18,9 @@ def detail(request, blog_id):
 
 def new(request):
     return render(request, 'new.html')
-#C-new(새로운 글을 작성할 수 있는 공간 띄워주기)
 
+
+#C-new(새로운 글을 작성할 수 있는 공간 띄워주기)
 def create(request):
     blog = Blog() #객체 틀 하나 가져오기
     blog.title = request.GET['title'] #내용채우기

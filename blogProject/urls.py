@@ -14,17 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 import blog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.home, name='home'),
-    path('blog/<int:blog_id>', blog.views.detail, name='detail'),
-    #detail url이 <int:blog_id>인 이유는 클릭하는 object의 data에 따라 url이 달라지기 때문
-    path('blog/new', blog.views.new, name='new'),
-    path('blog/create', blog.views.create, name='create'),
-    path('blog/edit/<int:blog_id>', blog.views.edit, name="edit"),
-    path('blog/update/<int:blog_id>', blog.views.update, name="update"),
-    path('blog/delete/<int:blog_id>', blog.views.delete, name="delete"),
+    path('blog/', include('blog.urls')),
+    # path('blog/<int:blog_id>', blog.views.detail, name='detail'),
+    # #detail url이 <int:blog_id>인 이유는 클릭하는 object의 data에 따라 url이 달라지기 때문
+    # path('blog/new', blog.views.new, name='new'),
+    # path('blog/create', blog.views.create, name='create'),
+    # path('blog/edit/<int:blog_id>', blog.views.edit, name="edit"),
+    # path('blog/update/<int:blog_id>', blog.views.update, name="update"),
+    # path('blog/delete/<int:blog_id>', blog.views.delete, name="delete"),
 ]
