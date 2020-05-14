@@ -25,6 +25,7 @@ def create(request):
     blog = Blog() #객체 틀 하나 가져오기
     blog.title = request.GET['title'] #내용채우기
     blog.body = request.GET['body']
+    blog.author = request.GET['author'] # 작성자를 받아오지 않네요!
     blog.pub_date = timezone.datetime.now()
     blog.save() #객체 저장하기
 
@@ -40,6 +41,7 @@ def update(request, blog_id):
     blog = get_object_or_404(Blog, pk = blog_id) 
     blog.title = request.GET['title'] #내용채우기
     blog.body = request.GET['body']
+    blog.author = request.GET['author'] # 여기도 마찬가지!
     blog.pub_date = timezone.datetime.now()
     blog.save() #객체 저장하기
 

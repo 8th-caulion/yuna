@@ -1,4 +1,4 @@
-{% extends 'base.html '%}
+{% extends 'base.html' %}
 
 
 {% block content %}
@@ -8,9 +8,11 @@
 
 <br><br>
 <form method="POST">
+    {% csrf_token %} 
+    <!-- csrf token을 넣어주어야 csrf공격을 막을 수 있어요! POST 메소드를 사용 할 때에는 꼭 넣어주셔야 합니다. -->
     <input type="button" value="HOME" onClick="location.href='http://127.0.0.1:8000/'">
     <!-- HTML input type="button"으로 버튼에 링크걸기! -->
-
+                                                                              
     <!-- <a href="{%url 'home'%}"><input type="submit" value="HOME"></a>
     버튼 안에 링크를 걸기 위해서는 위의 코드를 이용해야한다 -->
     <a href="{%url 'edit' blog.id %}">EDIT</a>
